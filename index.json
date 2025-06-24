@@ -1,8 +1,8 @@
 {
-  "version": 1,
+  "updated_at": "2025-06-24T16:41:14.190623+02:00",
   "packages": [
     {
-      "id": "pkg:oci/rpm-repo-builder",
+      "id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
       "location": "pkg/oci/rpm-repo-builder/scan.openvex.json"
     }
   ]

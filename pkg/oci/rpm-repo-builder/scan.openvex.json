@@ -13,10 +13,10 @@
       "timestamp": "2025-06-24T11:48:42.345713+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
           "subcomponents": [
             {
-              "@id": "pkg:deb/debian/apt@2.2.4?arch=amd64&distro=debian-11.11"
+              "@id": "pkg:deb/debian/apt@2.2.4"
             }
           ]
         }
