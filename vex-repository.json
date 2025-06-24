@@ -1,0 +1,15 @@
+{
+  "name": "VEX",
+  "description": "VEX Repository by Evertrust",
+  "versions": [
+    {
+      "spec_version": "0.1",
+      "locations": [
+        {
+          "url": "https://github.com/evertrust/vex/archive/refs/heads/main.tar.gz//vex-main"
+        }
+      ],
+      "update_interval": "4h"
+    }
+  ]
+}

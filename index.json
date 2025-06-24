@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "packages": [
+    {
+      "id": "pkg:oci/rpm-repo-builder",
+      "location": "pkg/oci/rpm-repo-builder/scan.openvex.json"
+    }
+  ]
+}

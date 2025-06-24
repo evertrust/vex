@@ -1,0 +1,29 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/public/vex-47033854cd4c80953389778da00cd1d9e2511cc575aa45b6793dcf93f766027a",
+  "author": "Evertrust Security Team",
+  "timestamp": "2025-06-24T11:48:42.345712+02:00",
+  "last_updated": "2025-06-24T16:41:14.190623+02:00",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2011-3374"
+      },
+      "timestamp": "2025-06-24T11:48:42.345713+02:00",
+      "products": [
+        {
+          "@id": "pkg:oci/rpm-repo-builder",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/debian/apt@2.2.4?arch=amd64&distro=debian-11.11"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "inline_mitigations_already_exist",
+      "impact_statement": "Vulnerability is not exploitable because it requires an option to be enabled."
+    }
+  ]
+}
