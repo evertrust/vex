@@ -1,0 +1,28 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/public/vex-47033854cd4c80953389778da00cd1d9e2511cc575aa45b6793dcf93f766027a",
+  "author": "Evertrust Security Team",
+  "timestamp": "2025-06-25T17:53:11.208965+02:00",
+  "last_updated": "2025-06-25T17:53:11.208965+02:00",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2025-27144"
+      },
+      "timestamp": "2025-06-25T17:53:11.208965+02:00",
+      "products": [
+        {
+          "@id": "pkg:golang/toolbox",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/go-jose/go-jose/v3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary"
+    }
+  ]
+}

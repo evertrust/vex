@@ -4,6 +4,10 @@
     {
       "id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
       "location": "pkg/oci/rpm-repo-builder/scan.openvex.json"
+    },
+    {
+      "id": "pkg:golang/toolbox",
+      "location": "pkg/golang/toolbox/openvex.json"
     }
   ]
 }
