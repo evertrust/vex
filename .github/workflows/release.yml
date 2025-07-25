@@ -20,9 +20,7 @@ jobs:
       - name: Generate release name
         id: release_info
         run: |
-          RELEASE_DATE=$(date +"%Y-%m-%d-%H%M")
-          RELEASE_NAME="vulns-${RELEASE_DATETIME}"
-          echo "release_name=${RELEASE_NAME}" >> $GITHUB_OUTPUT
+          echo "release_name=vulns-$(date +"%Y-%m-%d-%H%M")" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
