@@ -2,7 +2,7 @@ name: Build and Release VEX Reports
 
 on:
   push:
-    branches: [main]
+    # branches: [main]
 
 jobs:
   build-and-release:
@@ -29,6 +29,7 @@ jobs:
         with:
           tag_name: ${{ steps.release_info.outputs.release_name }}
           name: ${{ steps.release_info.outputs.release_name }}
+          body: Automatic release of ignore files generated on ${{ steps.release_info.outputs.release_name }}
           files: |
             dist/*.csv
             dist/*.yaml
