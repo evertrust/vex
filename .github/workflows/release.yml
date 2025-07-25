@@ -1,0 +1,38 @@
+name: Build and Release VEX Reports
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required for creating releases
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build VEX reports
+        run: make build
+
+      - name: Generate release name
+        id: release_info
+        run: |
+          echo "release_name=vulns-$(date +"%Y-%m-%d-%H%M")" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.release_info.outputs.release_name }}
+          name: ${{ steps.release_info.outputs.release_name }}
+          body: Automatic release of ignore files generated on ${{ steps.release_info.outputs.release_name }}
+          files: |
+            dist/*.csv
+            dist/*.yaml
+            dist/build_info.txt
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

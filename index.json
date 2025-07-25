@@ -3,11 +3,15 @@
   "packages": [
     {
       "id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
-      "location": "pkg/oci/rpm-repo-builder/scan.openvex.json"
+      "location": "pkg/oci/rpm-repo-builder/openvex.json"
     },
     {
       "id": "pkg:golang/toolbox",
       "location": "pkg/golang/toolbox/openvex.json"
+    },
+    {
+      "id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+      "location": "pkg/oci/horizon/openvex.json"
     }
   ]
 }
