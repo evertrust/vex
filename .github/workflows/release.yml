@@ -2,9 +2,7 @@ name: Build and Release VEX Reports
 
 on:
   push:
-    # For testing: run on all pushes
-    # For production: uncomment the next line and comment out the previous one
-    # branches: [main]
+    branches: [main]
 
 jobs:
   build-and-release:
