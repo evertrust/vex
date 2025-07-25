@@ -23,33 +23,15 @@ jobs:
         id: release_info
         run: |
           RELEASE_DATE=$(date +"%Y-%m-%d")
-          RELEASE_NAME="vex-reports-${RELEASE_DATE}"
+          RELEASE_NAME="vulns-${RELEASE_DATE}"
           echo "release_name=${RELEASE_NAME}" >> $GITHUB_OUTPUT
           echo "release_date=${RELEASE_DATE}" >> $GITHUB_OUTPUT
-
-      - name: Create release notes
-        id: release_notes
-        run: |
-          cat > release_notes.md << EOF
-          # VEX Reports
-
-          Automated build of vulnerability exchange (VEX) reports from OpenVEX files.
-
-          ## Usage
-
-          - **CSV files**: Import into spreadsheet applications or analysis tools
-          - **Trivy ignore files**: Use with Trivy scanner to suppress known false positives
-
-          Generated from commit: ${{ github.sha }}
-          Branch: ${{ github.ref_name }}
-          EOF
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.release_info.outputs.release_name }}
           name: ${{ steps.release_info.outputs.release_name }}
-          body_path: release_notes.md
           files: |
             dist/*.csv
             dist/*.yaml
