@@ -1,0 +1,226 @@
+#!/usr/bin/env bash
+#MISE description="Interactively add a CVE qualification statement to an OpenVEX document"
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage:
+  mise run qualify-cve
+  mise run qualify-cve -- <document> <product-purl> <CVE> <status> [justification]
+
+Examples:
+  mise run qualify-cve
+  mise run qualify-cve -- pkg/golang/toolbox/openvex.json pkg:golang/toolbox CVE-2025-27144 not_affected vulnerable_code_not_present
+
+Statuses:
+  not_affected
+  affected
+  fixed
+  under_investigation
+
+Justifications for not_affected:
+  component_not_present
+  vulnerable_code_not_present
+  vulnerable_code_not_in_execute_path
+  vulnerable_code_cannot_be_controlled_by_adversary
+  inline_mitigations_already_exist
+EOF
+}
+
+prompt() {
+  local label="$1"
+  local default="${2:-}"
+  local value
+
+  if [[ -n "$default" ]]; then
+    read -r -p "$label [$default]: " value
+    printf '%s' "${value:-$default}"
+  else
+    read -r -p "$label: " value
+    printf '%s' "$value"
+  fi
+}
+
+choose_from_list() {
+  local label="$1"
+  local default="$2"
+  shift 2
+
+  local options=("$@")
+  local item
+  local choice
+  local index=1
+
+  for item in "${options[@]}"; do
+    printf '  %d) %s\n' "$index" "$item" >&2
+    index=$((index + 1))
+  done
+
+  choice="$(prompt "$label" "$default")"
+  if [[ "$choice" =~ ^[0-9]+$ ]] && (( choice >= 1 && choice <= ${#options[@]} )); then
+    printf '%s' "${options[$((choice - 1))]}"
+  else
+    printf '%s' "$choice"
+  fi
+}
+
+valid_status() {
+  case "$1" in
+    not_affected|affected|fixed|under_investigation) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+valid_justification() {
+  case "$1" in
+    component_not_present|vulnerable_code_not_present|vulnerable_code_not_in_execute_path|vulnerable_code_cannot_be_controlled_by_adversary|inline_mitigations_already_exist) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  usage
+  exit 0
+fi
+
+document="${1:-}"
+product="${2:-}"
+cve="${3:-}"
+status="${4:-}"
+justification="${5:-}"
+
+if [[ -z "$document" ]]; then
+  documents=()
+  while IFS= read -r document_path; do
+    documents+=("$document_path")
+  done < <(find pkg -name openvex.json -type f | sort)
+
+  if (( ${#documents[@]} == 0 )); then
+    echo "No OpenVEX documents found under pkg/." >&2
+    exit 1
+  fi
+
+  echo "OpenVEX documents:"
+  document="$(choose_from_list "Document" "1" "${documents[@]}")"
+fi
+
+if [[ ! -f "$document" ]]; then
+  echo "Document not found: $document" >&2
+  exit 1
+fi
+
+if [[ -z "$product" ]]; then
+  if command -v jq >/dev/null 2>&1; then
+    products=()
+    while IFS= read -r product_id; do
+      products+=("$product_id")
+    done < <(jq -r '[.statements[].products[]."@id"] | unique[]' "$document" 2>/dev/null || true)
+  else
+    products=()
+  fi
+
+  if (( ${#products[@]} > 0 )); then
+    echo "Known products in $document:"
+    product="$(choose_from_list "Product" "1" "${products[@]}")"
+  else
+    product="$(prompt "Product package URL")"
+  fi
+fi
+
+if [[ -z "$product" ]]; then
+  echo "Product is required." >&2
+  exit 1
+fi
+
+if [[ -z "$cve" ]]; then
+  cve="$(prompt "CVE")"
+fi
+cve="$(printf '%s' "$cve" | tr '[:lower:]' '[:upper:]')"
+
+if [[ ! "$cve" =~ ^CVE-[0-9]{4}-[0-9]{4,}$ ]]; then
+  echo "Invalid CVE identifier: $cve" >&2
+  exit 1
+fi
+
+if [[ -z "$status" ]]; then
+  echo "Statuses:"
+  status="$(choose_from_list "Status" "1" not_affected affected fixed under_investigation)"
+fi
+
+if ! valid_status "$status"; then
+  echo "Invalid status: $status" >&2
+  usage
+  exit 1
+fi
+
+impact_statement=""
+action_statement=""
+status_note=""
+subcomponents=""
+
+if [[ "$status" == "not_affected" ]]; then
+  if [[ -z "$justification" ]]; then
+    echo "Justifications:"
+    justification="$(choose_from_list "Justification" "1" component_not_present vulnerable_code_not_present vulnerable_code_not_in_execute_path vulnerable_code_cannot_be_controlled_by_adversary inline_mitigations_already_exist)"
+  fi
+
+  if ! valid_justification "$justification"; then
+    echo "Invalid justification: $justification" >&2
+    usage
+    exit 1
+  fi
+
+  impact_statement="$(prompt "Impact statement (optional)")"
+elif [[ "$status" == "affected" ]]; then
+  action_statement="$(prompt "Action statement" "No action statement provided")"
+fi
+
+status_note="$(prompt "Status note (optional)")"
+subcomponents="$(prompt "Subcomponent package URLs, comma-separated (optional)")"
+
+args=(add --in-place --document "$document" --product "$product" --vuln "$cve" --status "$status")
+
+if [[ "$status" == "not_affected" ]]; then
+  args+=(--justification "$justification")
+  if [[ -n "$impact_statement" ]]; then
+    args+=(--impact-statement "$impact_statement")
+  fi
+elif [[ "$status" == "affected" && -n "$action_statement" ]]; then
+  args+=(--action-statement "$action_statement")
+fi
+
+if [[ -n "$status_note" ]]; then
+  args+=(--status-note "$status_note")
+fi
+
+if [[ -n "$subcomponents" ]]; then
+  IFS=',' read -r -a subcomponent_list <<< "$subcomponents"
+  for subcomponent in "${subcomponent_list[@]}"; do
+    subcomponent="${subcomponent#"${subcomponent%%[![:space:]]*}"}"
+    subcomponent="${subcomponent%"${subcomponent##*[![:space:]]}"}"
+    if [[ -n "$subcomponent" ]]; then
+      args+=(--subcomponents "$subcomponent")
+    fi
+  done
+fi
+
+echo
+echo "About to update $document:"
+echo "  product: $product"
+echo "  cve: $cve"
+echo "  status: $status"
+if [[ -n "$justification" ]]; then
+  echo "  justification: $justification"
+fi
+
+confirm="$(prompt "Apply this qualification? (y/N)" "N")"
+case "$confirm" in
+  y|Y|yes|YES)
+    vexctl "${args[@]}"
+    echo "Updated $document"
+    ;;
+  *)
+    echo "Cancelled."
+    exit 1
+    ;;
+esac
