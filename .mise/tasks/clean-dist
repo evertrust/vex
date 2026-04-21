@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#MISE description="Remove generated dist files"
+set -euo pipefail
+
+rm -rf dist
+echo "Removed dist/"

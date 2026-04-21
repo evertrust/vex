@@ -1,21 +1,24 @@
-name: Build and Release VEX Reports
+name: Generate and Release VEX Reports
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build-and-release:
+  generate-and-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required for creating releases
+      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build VEX reports
-        run: make build
+      - name: Set up mise
+        uses: jdx/mise-action@v3
+
+      - name: Generate VEX Reports
+        run: mise run generate-reports
 
       - name: Generate release name
         id: release_info
@@ -27,8 +30,9 @@ jobs:
         with:
           tag_name: ${{ steps.release_info.outputs.release_name }}
           name: ${{ steps.release_info.outputs.release_name }}
-          body: Automatic release of ignore files generated on ${{ steps.release_info.outputs.release_name }}
+          body: Automatic release of VEX reports generated on ${{ steps.release_info.outputs.release_name }}
           files: |
+            dist/openvex.json
             dist/*.csv
             dist/*.yaml
             dist/build_info.txt

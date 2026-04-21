@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#MISE description="Generate per-product Trivy ignore files in dist/"
+#MISE wait_for=["clean-dist"]
+set -euo pipefail
+
+documents=()
+while IFS= read -r document_path; do
+  documents+=("$document_path")
+done < <(find pkg -name openvex.json -type f | LC_ALL=C sort)
+
+if (( ${#documents[@]} == 0 )); then
+  echo "No OpenVEX documents found under pkg/." >&2
+  exit 1
+fi
+
+mkdir -p dist
+
+for vex_file in "${documents[@]}"; do
+  relative_path="${vex_file#pkg/}"
+  relative_path="${relative_path%/openvex.json}"
+  output_file="dist/${relative_path//\//_}.trivyignore.yaml"
+
+  echo "vulnerabilities:" > "$output_file"
+  jq -r '
+    .statements[]
+    | select(.status == "not_affected")
+    | "  - id: " + .vulnerability.name
+      + (if .impact_statement then "\n    statement: " + .impact_statement else "" end)
+  ' "$vex_file" >> "$output_file"
+
+  echo "Created $output_file"
+done

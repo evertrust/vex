@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#MISE description="Merge all OpenVEX documents into dist/openvex.json"
+#MISE wait_for=["clean-dist"]
+set -euo pipefail
+
+output="dist/openvex.json"
+document_id="https://openvex.dev/docs/public/vex-49189b9176ef645b2d35feb3f74ba654ebe406faf8f19a89907210c524c8f361"
+author="Evertrust Security Team"
+
+documents=()
+while IFS= read -r document_path; do
+  documents+=("$document_path")
+done < <(find pkg -name openvex.json -type f | LC_ALL=C sort)
+
+if (( ${#documents[@]} == 0 )); then
+  echo "No OpenVEX documents found under pkg/." >&2
+  exit 1
+fi
+
+mkdir -p "$(dirname "$output")"
+
+vexctl merge \
+  --author "$author" \
+  --id "$document_id" \
+  "${documents[@]}" > "$output"
+
+echo "Merged ${#documents[@]} OpenVEX documents into $output"

@@ -1,2 +1,11 @@
 [tools]
+"aqua:jqlang/jq" = "1.8.1"
 "github:openvex/vexctl" = "0.4.1"
+
+[tasks.generate-reports]
+description = "Generate CSV, Trivy ignore, and standalone OpenVEX reports in dist/"
+depends = ["clean-dist", "generate-csv-reports", "generate-trivyignore-files", "generate-standalone-json"]
+run = [
+    "echo \"Generated reports at: $(date -u +\"%Y-%m-%d %H:%M:%S UTC\")\" > dist/build_info.txt",
+    "echo \"Generated reports in dist/\""
+]
