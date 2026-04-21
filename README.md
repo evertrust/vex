@@ -2,16 +2,17 @@
 
 EVERTRUST shares its internal security team findings after qualifying and evaluating vulnerabilities impacts. This repository contains vulnerability exchange (VEX) reports for Evertrust products, alongside with common ignore file formats designed for easing usage with vulnerability scanners.
 
-## Ignore files
+## Release reports
 
-Ignore files are published through releases named `vulns-YYYY-MM-DD`. Each release includes:
+Reports are published through releases named `vulns-YYYY-MM-DD`. Each release includes:
 
+- a standalone OpenVEX document (`openvex.json`) that merges every package document;
 - CSV files for each product (e.g., `oci_horizon.csv`) that lists ignored vulnerabilities and the justification;
 - Trivy ignore files for each product (e.g., `oci_horizon.trivyignore.yaml`) that can be used by Trivy:
   ```
   $ trivy image --ignorefile ./.trivyignore.yaml registry.evertrust.io/horizon:test
   ```
-- Build metadata (`build_info.txt`)
+- Generation metadata (`build_info.txt`)
 
 [![Latest Release](https://img.shields.io/github/v/release/evertrust/vex?label=Latest%20VEX%20Reports)](https://github.com/evertrust/vex/releases/latest)
 
@@ -26,7 +27,21 @@ configured tools from the repository root:
 mise install
 ```
 
-This installs `vexctl` from the OpenVEX release pinned in `mise.toml`.
+This installs `vexctl` and `jq` from the versions pinned in `mise.toml`.
+
+Generate the release reports from every OpenVEX document under `pkg/`:
+
+```sh
+mise run generate-reports
+```
+
+You can also regenerate one report type at a time:
+
+```sh
+mise run generate-standalone-json
+mise run generate-csv-reports
+mise run generate-trivyignore-files
+```
 
 ## Qualify a CVE
 
@@ -183,9 +198,9 @@ Then register the document in `index.json`:
 }
 ```
 
-Finally, validate the JSON files and rebuild the generated reports:
+Finally, validate the JSON files and regenerate the release reports:
 
 ```sh
 jq . index.json >/dev/null
-make build
+mise run generate-reports
 ```
