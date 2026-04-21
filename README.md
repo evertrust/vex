@@ -89,69 +89,6 @@ Valid `not_affected` justifications are:
 
 The task updates the selected OpenVEX document in place using `vexctl add`.
 
-## Trivy VEX matching before image push
-
-Trivy applies OpenVEX statements by matching product PURLs from the VEX document
-against PURLs discovered during the scan.
-
-For pushed container images, use the OCI product PURL and list vulnerable packages
-as subcomponents:
-
-```json
-{
-  "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
-  "subcomponents": [
-    {
-      "@id": "pkg:maven/tools.jackson.core/jackson-core@3.0.1"
-    }
-  ]
-}
-```
-
-This works when Trivy scans the image from the registry, for example:
-
-```sh
-trivy image --vex pkg/oci/horizon/openvex.json quay.io/evertrust/horizon:tag
-```
-
-Before the image is pushed, local scans can use a different target identity even
-if the Docker image is tagged with the final registry name. In that case, Trivy
-may not match a VEX statement scoped only to the OCI product PURL, and a
-`not_affected` vulnerability can still appear in local scan output.
-
-For pre-push local scans, also add the vulnerable package PURL as a direct
-product in the same statement:
-
-```json
-{
-  "products": [
-    {
-      "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
-      "subcomponents": [
-        {
-          "@id": "pkg:maven/tools.jackson.core/jackson-core@3.0.1"
-        }
-      ]
-    },
-    {
-      "@id": "pkg:maven/tools.jackson.core/jackson-core@3.0.1"
-    }
-  ],
-  "status": "not_affected",
-  "justification": "vulnerable_code_not_in_execute_path"
-}
-```
-
-Use the package PURL exactly as Trivy reports it in JSON output:
-
-```sh
-trivy image --input ./image.tar --format json \
-  | jq -r '.. | objects | select(.VulnerabilityID? == "CVE-2026-29062") | .PkgIdentifier.PURL'
-```
-
-Do not use `--show-suppressed` for pass/fail checks. That flag intentionally
-prints vulnerabilities that VEX filtered out, and is only useful for debugging.
-
 ## Add a package to an existing document
 
 If the package does not already exist in a document, use the same task and type the
