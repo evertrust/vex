@@ -2,15 +2,12 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "timestamp": "2025-07-25T12:30:09.041044+02:00",
-  "last_updated": "2025-07-25T13:14:10.318469+02:00",
-  "version": 1,
+  "version": 3,
   "statements": [
     {
       "vulnerability": {
         "name": "CVE-2025-5702"
       },
-      "timestamp": "2025-07-25T12:40:32.131273+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -29,13 +26,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_not_present",
-      "impact_statement": "This vulnerability only impacts POWER 10 (ppc64le), not POWER9, nor the aarch64, s390x, x86-64 products"
+      "impact_statement": "This vulnerability only impacts POWER 10 (ppc64le), not POWER9, nor the aarch64, s390x, x86-64 products",
+      "timestamp": "2025-07-25T10:40:32.131273Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-32988"
       },
-      "timestamp": "2025-07-25T12:45:11.244119+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -48,13 +45,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "GnuTLS is not used"
+      "impact_statement": "GnuTLS is not used",
+      "timestamp": "2025-07-25T10:45:11.244119Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-32989"
       },
-      "timestamp": "2025-07-25T12:46:23.184146+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -67,13 +64,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "GnuTLS is not used"
+      "impact_statement": "GnuTLS is not used",
+      "timestamp": "2025-07-25T10:46:23.184146Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-32990"
       },
-      "timestamp": "2025-07-25T12:46:51.623451+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -86,13 +83,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "GnuTLS is not used"
+      "impact_statement": "GnuTLS is not used",
+      "timestamp": "2025-07-25T10:46:51.623451Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-6395"
       },
-      "timestamp": "2025-07-25T12:49:50.579457+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -105,13 +102,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "GnuTLS is not used"
+      "impact_statement": "GnuTLS is not used",
+      "timestamp": "2025-07-25T10:49:50.579457Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2024-10041"
       },
-      "timestamp": "2025-07-25T12:50:50.159009+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -133,13 +130,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "PAM is not in use for authentication in the container"
+      "impact_statement": "PAM is not in use for authentication in the container",
+      "timestamp": "2025-07-25T10:50:50.159009Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2024-10963"
       },
-      "timestamp": "2025-07-25T12:53:37.910737+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -161,13 +158,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "PAM is not in use for authentication in the container"
+      "impact_statement": "PAM is not in use for authentication in the container",
+      "timestamp": "2025-07-25T10:53:37.910737Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-4877"
       },
-      "timestamp": "2025-07-25T13:01:11.096994+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -178,13 +175,13 @@
           ]
         }
       ],
-      "status": "under_investigation"
+      "status": "under_investigation",
+      "timestamp": "2025-07-25T11:01:11.096994Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-4878"
       },
-      "timestamp": "2025-07-25T13:02:38.819758+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -197,13 +194,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used"
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:02:38.819758Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-4877"
       },
-      "timestamp": "2025-07-25T13:07:25.875324+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -216,13 +213,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used"
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:07:25.875324Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-5318"
       },
-      "timestamp": "2025-07-25T13:07:33.498342+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -235,13 +232,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used"
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:07:33.498342Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-5351"
       },
-      "timestamp": "2025-07-25T13:07:42.018978+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -254,13 +251,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used"
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:07:42.018978Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-5372"
       },
-      "timestamp": "2025-07-25T13:07:49.993725+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -273,13 +270,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used"
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:07:49.993725Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-5987"
       },
-      "timestamp": "2025-07-25T13:07:57.008895+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -292,13 +289,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used"
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:07:57.008895Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2025-45582"
       },
-      "timestamp": "2025-07-25T13:13:34.066714+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -311,13 +308,13 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "tar is not used"
+      "impact_statement": "tar is not used",
+      "timestamp": "2025-07-25T11:13:34.066714Z"
     },
     {
       "vulnerability": {
         "name": "CVE-2021-31879"
       },
-      "timestamp": "2025-07-25T13:14:10.318469+02:00",
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
@@ -330,7 +327,29 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "wget is not used"
+      "impact_statement": "wget is not used",
+      "timestamp": "2025-07-25T11:14:10.318469Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-2332"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Jetty HTTP is only used by the hadoop library. In Horizon, this library is used for Parquet file serialization and no hadoop feature linked to the Jetty HTTP client/server are used",
+      "timestamp": "2026-04-22T12:31:36.078626Z"
     }
-  ]
+  ],
+  "timestamp": "2025-07-25T10:30:09Z",
+  "last_updated": "2026-04-22T12:31:36Z"
 }
