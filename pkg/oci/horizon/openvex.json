@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 3,
+  "version": 4,
   "statements": [
     {
       "vulnerability": {
@@ -348,8 +348,35 @@
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Jetty HTTP is only used by the hadoop library. In Horizon, this library is used for Parquet file serialization and no hadoop feature linked to the Jetty HTTP client/server are used",
       "timestamp": "2026-04-22T12:31:36.078626Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42577"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-transport-native-epoll"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-transport-native-epoll"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "component_not_present",
+      "impact_statement": "According to both the maintainers (https://github.com/netty/netty/issues/16772\\#issuecomment-4404457050) and github (see Affected Versions - https://github.com/advisories/GHSA-rwm7-x88c-3g2p), the 4.1 artifact is not affected",
+      "timestamp": "2026-05-11T10:03:11.153834Z"
     }
   ],
   "timestamp": "2025-07-25T10:30:09Z",
-  "last_updated": "2026-04-22T12:31:36Z"
+  "last_updated": "2026-05-11T10:03:11Z"
 }
