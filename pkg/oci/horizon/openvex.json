@@ -385,7 +385,7 @@
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
-              "@id": "pkg:maven/org.jline/jline"
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
             }
           ]
         },
@@ -393,7 +393,7 @@
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
-              "@id": "pkg:maven/org.jline/jline"
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
             }
           ]
         }
@@ -412,7 +412,7 @@
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
-              "@id": "pkg:maven/org.jline/jline"
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
             }
           ]
         },
@@ -420,7 +420,7 @@
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
-              "@id": "pkg:maven/org.jline/jline"
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
             }
           ]
         }
