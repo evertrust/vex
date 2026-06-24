@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 5,
+  "version": 6,
   "statements": [
     {
       "vulnerability": {
@@ -429,8 +429,74 @@
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
       "timestamp": "2026-06-19T09:32:02.841711Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-54512"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.21.3"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.21.3"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used for parquet serialization. No deserialization occurs in this process",
+      "timestamp": "2026-06-24T11:56:01.449225Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-54513"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.21.3"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.21.3"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used for parquet serialization. No deserialization occurs in this process",
+      "timestamp": "2026-06-24T11:56:01.449225Z"
     }
   ],
   "timestamp": "2025-07-25T10:30:09Z",
-  "last_updated": "2026-06-19T09:32:02Z"
+  "last_updated": "2026-06-24T11:56:01Z"
 }
