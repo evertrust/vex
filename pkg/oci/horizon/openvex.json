@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 6,
+  "version": 15,
   "statements": [
     {
       "vulnerability": {
@@ -495,8 +495,179 @@
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used for parquet serialization. No deserialization occurs in this process",
       "timestamp": "2026-06-24T11:56:01.449225Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-6763"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Jetty HTTP is only used by the hadoop library for Parquet file serialization; no hadoop feature linked to the Jetty HTTP client/server is used",
+      "timestamp": "2026-07-23T12:36:12.609689Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-6790"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.58.v20250814"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Jetty Server is only pulled transitively via Hadoop for Parquet file serialization; Horizon never starts a Jetty server or exposes it to network traffic",
+      "timestamp": "2026-07-23T12:36:43.815267Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-10050"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.58.v20250814"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Jetty Security (digest auth) is only pulled transitively via Hadoop for Parquet file serialization; Horizon never uses Jetty's authentication mechanisms",
+      "timestamp": "2026-07-23T12:37:12.078118Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-56741"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
+      "timestamp": "2026-07-23T12:37:51.252864Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-56741"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
+      "timestamp": "2026-07-23T12:38:06.364098Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-56740"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
+      "timestamp": "2026-07-23T12:38:31.951961Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-56740"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
+      "timestamp": "2026-07-23T12:38:49.570589Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-R7WM-3CXJ-WFF9"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.21.3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency. The vulnerability only affects Jackson's async/non-blocking parser API, which is never invoked ‚ Horizon only uses Play-JSON's standard blocking parser, and the shaded 2.21.3 copy is not in the Horizon live JSON parsing path",
+      "timestamp": "2026-07-23T12:46:23.667035Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-R7WM-3CXJ-WFF9"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.21.3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency. The vulnerability only affects Jackson's async/non-blocking parser API, which is never invoked ‚ Horizon only uses Play-JSON's standard blocking parser, and the shaded 2.21.3 copy is not in the Horizon live JSON parsing path",
+      "timestamp": "2026-07-23T12:47:01.290424Z"
     }
   ],
   "timestamp": "2025-07-25T10:30:09Z",
-  "last_updated": "2026-06-24T11:56:01Z"
+  "last_updated": "2026-07-23T12:47:01Z"
 }
