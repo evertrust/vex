@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 15,
+  "version": 7,
   "statements": [
     {
       "vulnerability": {
