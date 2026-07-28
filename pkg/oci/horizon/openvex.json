@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 7,
+  "version": 8,
   "statements": [
     {
       "vulnerability": {
@@ -631,7 +631,7 @@
     },
     {
       "vulnerability": {
-        "name": "GHSA-R7WM-3CXJ-WFF9"
+        "name": "GHSA-r7wm-3cxj-wff9"
       },
       "products": [
         {
@@ -650,7 +650,7 @@
     },
     {
       "vulnerability": {
-        "name": "GHSA-R7WM-3CXJ-WFF9"
+        "name": "GHSA-r7wm-3cxj-wff9"
       },
       "products": [
         {
