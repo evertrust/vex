@@ -10,7 +10,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/stream?repository_url=quay.io%2Fevertrust%2Fstream"
+          "@id": "pkg:oci/stream"
         }
       ],
       "status": "not_affected",
@@ -24,7 +24,7 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/stream?repository_url=quay.io%2Fevertrust%2Fstream"
+          "@id": "pkg:oci/stream"
         }
       ],
       "status": "not_affected",
