@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 8,
+  "version": 9,
   "statements": [
     {
       "vulnerability": {
@@ -666,8 +666,36 @@
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency. The vulnerability only affects Jackson's async/non-blocking parser API, which is never invoked ‚ Horizon only uses Play-JSON's standard blocking parser, and the shaded 2.21.3 copy is not in the Horizon live JSON parsing path",
       "timestamp": "2026-07-23T12:47:01.290424Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-47063"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "component_not_present",
+      "impact_statement": "docker image for openjdk 17.0.20 not yet available",
+      "timestamp": "2026-08-20T08:58:08.097641Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41254"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "component_not_present",
+      "impact_statement": "docker image for openjdk 17.0.20 not yet available",
+      "timestamp": "2026-08-20T08:58:35.058498Z"
     }
   ],
   "timestamp": "2025-07-25T10:30:09Z",
-  "last_updated": "2026-07-23T12:47:01Z"
+  "last_updated": "2026-08-20T08:58:35Z"
 }
