@@ -12,6 +12,10 @@
     {
       "id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
       "location": "pkg/oci/horizon/openvex.json"
+    },
+    {
+      "id": "pkg:oci/stream?repository_url=quay.io%2Fevertrust%2Fstream",
+      "location": "pkg/oci/stream/openvex.json"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/public/vex-84825192117a8d1201bf21bcc124449ca4e43cbe14a2c4056a096eb6b63ca336",
+  "author": "Evertrust Security Team",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2026-47063"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/stream?repository_url=quay.io%2Fevertrust%2Fstream"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "component_not_present",
+      "impact_statement": "docker image for openjdk 17.0.20 not yet available",
+      "timestamp": "2026-08-20T13:39:09.599014Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41254"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/stream?repository_url=quay.io%2Fevertrust%2Fstream"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "component_not_present",
+      "impact_statement": "docker image for openjdk 17.0.20 not yet available",
+      "timestamp": "2026-08-20T13:39:19.46077Z"
+    }
+  ],
+  "timestamp": "2026-08-20T13:39:09Z",
+  "last_updated": "2026-08-20T13:39:19Z"
+}
