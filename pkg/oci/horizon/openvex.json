@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 10,
+  "version": 11,
   "statements": [
     {
       "vulnerability": {
@@ -770,8 +770,84 @@
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
       "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
       "timestamp": "2026-10-02T13:50:27.975509Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-89407"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
+      "timestamp": "2026-10-02T14:36:00.678286Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-89407"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
+      "timestamp": "2026-10-02T14:36:00.719694Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-89425"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is parsed",
+      "timestamp": "2026-10-02T14:36:00.760933Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-89425"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is parsed",
+      "timestamp": "2026-10-02T14:36:00.799808Z"
     }
   ],
   "timestamp": "2025-07-25T10:30:09Z",
-  "last_updated": "2026-10-02T13:50:27Z"
+  "last_updated": "2026-10-02T14:36:00Z"
 }
