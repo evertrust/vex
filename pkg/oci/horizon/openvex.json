@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 11,
+  "version": 12,
   "statements": [
     {
       "vulnerability": {
@@ -11,6 +11,34 @@
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libc-bin"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libc6"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/locales"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libc-bin"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libc6"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/locales"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/libc-bin"
@@ -41,6 +69,22 @@
               "@id": "pkg:deb/ubuntu/libgnutls30t64"
             }
           ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -55,6 +99,22 @@
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/libgnutls30t64"
@@ -79,6 +139,22 @@
               "@id": "pkg:deb/ubuntu/libgnutls30t64"
             }
           ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -98,6 +174,22 @@
               "@id": "pkg:deb/ubuntu/libgnutls30t64"
             }
           ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libgnutls30t64"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -112,6 +204,40 @@
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules-bin"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-runtime"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam0g"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules-bin"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-runtime"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam0g"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/libpam-modules"
@@ -154,6 +280,40 @@
               "@id": "pkg:deb/ubuntu/libpam0g"
             }
           ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules-bin"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-runtime"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam0g"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-modules-bin"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam-runtime"
+            },
+            {
+              "@id": "pkg:deb/ubuntu/libpam0g"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -173,37 +333,17 @@
               "@id": "pkg:deb/ubuntu/libssh-4"
             }
           ]
-        }
-      ],
-      "status": "under_investigation",
-      "timestamp": "2025-07-25T11:01:11.096994Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2025-4878"
-      },
-      "products": [
+        },
         {
-          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/libssh-4"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used",
-      "timestamp": "2025-07-25T11:02:38.819758Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2025-4877"
-      },
-      "products": [
+        },
         {
-          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/libssh-4"
@@ -218,11 +358,62 @@
     },
     {
       "vulnerability": {
+        "name": "CVE-2025-4878"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:02:38.819758Z"
+    },
+    {
+      "vulnerability": {
         "name": "CVE-2025-5318"
       },
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/libssh-4"
@@ -247,6 +438,22 @@
               "@id": "pkg:deb/ubuntu/libssh-4"
             }
           ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -261,6 +468,22 @@
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/libssh-4"
@@ -285,6 +508,22 @@
               "@id": "pkg:deb/ubuntu/libssh-4"
             }
           ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -299,6 +538,22 @@
       "products": [
         {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/tar"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/tar"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:deb/ubuntu/tar"
@@ -323,6 +578,22 @@
               "@id": "pkg:deb/ubuntu/wget"
             }
           ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/wget"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/wget"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -336,7 +607,23 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
@@ -355,6 +642,14 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-transport-native-epoll"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
@@ -363,7 +658,7 @@
           ]
         },
         {
-          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/io.netty/netty-transport-native-epoll"
@@ -381,6 +676,14 @@
         "name": "GHSA-2r2c-cx56-8933"
       },
       "products": [
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
         {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
@@ -409,6 +712,14 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
@@ -435,6 +746,17 @@
         "name": "CVE-2026-54512"
       },
       "products": [
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.21.3"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2"
+            }
+          ]
+        },
         {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
@@ -469,6 +791,17 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.21.3"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.19.2"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
@@ -502,7 +835,23 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.58.v20250814"
@@ -521,7 +870,23 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.58.v20250814"
@@ -540,7 +905,23 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.58.v20250814"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/org.eclipse.jetty/jetty-security@9.4.58.v20250814"
@@ -559,24 +940,21 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/org.jline/jline-remote-telnet"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
-      "timestamp": "2026-07-23T12:37:51.252864Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2026-56741"
-      },
-      "products": [
+        },
         {
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
@@ -597,24 +975,21 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/org.jline/jline-remote-telnet"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
-      "timestamp": "2026-07-23T12:38:31.951961Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2026-56740"
-      },
-      "products": [
+        },
         {
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
@@ -635,24 +1010,21 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.21.3"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.21.3"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency. The vulnerability only affects Jackson's async/non-blocking parser API, which is never invoked ‚ Horizon only uses Play-JSON's standard blocking parser, and the shaded 2.21.3 copy is not in the Horizon live JSON parsing path",
-      "timestamp": "2026-07-23T12:46:23.667035Z"
-    },
-    {
-      "vulnerability": {
-        "name": "GHSA-r7wm-3cxj-wff9"
-      },
-      "products": [
+        },
         {
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
@@ -673,7 +1045,13 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon"
+        },
+        {
           "@id": "pkg:oci/horizon"
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon"
         }
       ],
       "status": "not_affected",
@@ -687,7 +1065,13 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon"
+        },
+        {
           "@id": "pkg:oci/horizon"
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon"
         }
       ],
       "status": "not_affected",
@@ -701,24 +1085,21 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
-      "timestamp": "2026-10-02T13:50:27.850456Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2026-91776"
-      },
-      "products": [
+        },
         {
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
@@ -739,24 +1120,21 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
-      "timestamp": "2026-10-02T13:50:27.937019Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2026-91777"
-      },
-      "products": [
+        },
         {
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
@@ -777,24 +1155,21 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
-      "timestamp": "2026-10-02T14:36:00.678286Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2026-89407"
-      },
-      "products": [
+        },
         {
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
@@ -815,24 +1190,21 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        },
+        {
           "@id": "pkg:oci/horizon",
           "subcomponents": [
             {
               "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
             }
           ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is parsed",
-      "timestamp": "2026-10-02T14:36:00.760933Z"
-    },
-    {
-      "vulnerability": {
-        "name": "CVE-2026-89425"
-      },
-      "products": [
+        },
         {
           "@id": "pkg:oci/registry.evertrust.io/horizon",
           "subcomponents": [
@@ -849,5 +1221,5 @@
     }
   ],
   "timestamp": "2025-07-25T10:30:09Z",
-  "last_updated": "2026-10-02T14:36:00Z"
+  "last_updated": "2026-10-15T10:18:28Z"
 }
