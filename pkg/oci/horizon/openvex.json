@@ -351,10 +351,8 @@
           ]
         }
       ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
-      "impact_statement": "SSH is not used",
-      "timestamp": "2025-07-25T11:07:25.875324Z"
+      "status": "under_investigation",
+      "timestamp": "2025-07-25T11:01:11.096994Z"
     },
     {
       "vulnerability": {
@@ -390,6 +388,41 @@
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
       "impact_statement": "SSH is not used",
       "timestamp": "2025-07-25T11:02:38.819758Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-4877"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/ubuntu/libssh-4"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "SSH is not used",
+      "timestamp": "2025-07-25T11:07:25.875324Z"
     },
     {
       "vulnerability": {
@@ -940,6 +973,41 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
+      "timestamp": "2026-07-23T12:37:51.252864Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-56741"
+      },
+      "products": [
+        {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
           "subcomponents": [
             {
@@ -975,6 +1043,41 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.jline/jline-remote-telnet"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
+      "timestamp": "2026-07-23T12:38:31.951961Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-56740"
+      },
+      "products": [
+        {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
           "subcomponents": [
             {
@@ -1003,6 +1106,41 @@
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "jline is a transitive dependency from Hadoop, used for parquet serialization. The library is used for internal serialization only, and the jline telnet features are never executed",
       "timestamp": "2026-07-23T12:38:49.570589Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-r7wm-3cxj-wff9"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.21.3"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.21.3"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.21.3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency. The vulnerability only affects Jackson's async/non-blocking parser API, which is never invoked ‚ Horizon only uses Play-JSON's standard blocking parser, and the shaded 2.21.3 copy is not in the Horizon live JSON parsing path",
+      "timestamp": "2026-07-23T12:46:23.667035Z"
     },
     {
       "vulnerability": {
@@ -1085,6 +1223,41 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
+      "timestamp": "2026-10-02T13:50:27.850456Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-91776"
+      },
+      "products": [
+        {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
           "subcomponents": [
             {
@@ -1113,6 +1286,41 @@
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
       "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
       "timestamp": "2026-10-02T13:50:27.897677Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-91777"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-databind version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
+      "timestamp": "2026-10-02T13:50:27.937019Z"
     },
     {
       "vulnerability": {
@@ -1155,6 +1363,41 @@
       },
       "products": [
         {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
+      "timestamp": "2026-10-02T14:36:00.678286Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-89407"
+      },
+      "products": [
+        {
           "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
           "subcomponents": [
             {
@@ -1183,6 +1426,41 @@
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
       "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is deserialized",
       "timestamp": "2026-10-02T14:36:00.719694Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-89425"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.2"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
+      "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is parsed",
+      "timestamp": "2026-10-02T14:36:00.760933Z"
     },
     {
       "vulnerability": {
