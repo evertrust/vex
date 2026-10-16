@@ -10,7 +10,7 @@ Reports are published through releases named `vulns-YYYY-MM-DD`. Each release in
 - CSV files for each product (e.g., `oci_horizon.csv`) that lists ignored vulnerabilities and the justification;
 - Trivy ignore files for each product (e.g., `oci_horizon.trivyignore.yaml`) that can be used by Trivy:
   ```
-  $ trivy image --ignorefile ./.trivyignore.yaml registry.evertrust.io/horizon:test
+  $ trivy image --ignorefile ./.trivyignore.yaml harbor.infra.evertrust.io/library/horizon:test
   ```
 - Generation metadata (`build_info.txt`)
 
