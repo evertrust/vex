@@ -3,8 +3,8 @@
   "@id": "https://openvex.dev/docs/public/vex-47033854cd4c80953389778da00cd1d9e2511cc575aa45b6793dcf93f766027a",
   "author": "Evertrust Security Team",
   "timestamp": "2025-06-24T11:48:42.345712+02:00",
-  "last_updated": "2025-06-25T10:36:12.585606+02:00",
-  "version": 2,
+  "last_updated": "2026-10-16T15:03:43Z",
+  "version": 3,
   "statements": [
     {
       "vulnerability": {
@@ -13,7 +13,7 @@
       "timestamp": "2025-06-24T11:48:42.345713+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/apt"
@@ -32,7 +32,7 @@
       "timestamp": "2025-06-25T10:20:22.100791+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/bash"
@@ -51,7 +51,7 @@
       "timestamp": "2025-06-25T10:24:11.503548+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libcurl4"
@@ -70,7 +70,7 @@
       "timestamp": "2025-06-25T10:25:29.203208+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libcurl4"
@@ -89,7 +89,7 @@
       "timestamp": "2025-06-25T10:25:44.210102+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libcurl4"
@@ -108,7 +108,7 @@
       "timestamp": "2025-06-25T10:27:57.30658+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libdb5.3"
@@ -127,7 +127,7 @@
       "timestamp": "2025-06-25T10:29:07.154311+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libexpat1"
@@ -146,7 +146,7 @@
       "timestamp": "2025-06-25T10:30:16.039831+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libgcrypt20"
@@ -164,7 +164,7 @@
       "timestamp": "2025-06-25T10:30:55.539483+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libldap-2.4-2"
@@ -182,7 +182,7 @@
       "timestamp": "2025-06-25T10:31:20.559317+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libldap-common"
@@ -200,7 +200,7 @@
       "timestamp": "2025-06-25T10:31:51.669955+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libpam-modules"
@@ -218,7 +218,7 @@
       "timestamp": "2025-06-25T10:32:16.170074+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libpam-modules-bin"
@@ -236,7 +236,7 @@
       "timestamp": "2025-06-25T10:32:40.921087+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libpam-runtime"
@@ -254,7 +254,7 @@
       "timestamp": "2025-06-25T10:33:09.455298+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libpam0g"
@@ -272,7 +272,7 @@
       "timestamp": "2025-06-25T10:33:51.016939+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libxml2"
@@ -291,7 +291,7 @@
       "timestamp": "2025-06-25T10:34:18.891213+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libxml2"
@@ -310,7 +310,7 @@
       "timestamp": "2025-06-25T10:34:34.921581+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libxml2"
@@ -329,7 +329,7 @@
       "timestamp": "2025-06-25T10:34:52.857291+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libxml2"
@@ -348,7 +348,7 @@
       "timestamp": "2025-06-25T10:35:21.670606+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libzck1"
@@ -366,7 +366,7 @@
       "timestamp": "2025-06-25T10:35:43.910967+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/libzstd1"
@@ -384,7 +384,7 @@
       "timestamp": "2025-06-25T10:36:12.585607+02:00",
       "products": [
         {
-          "@id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+          "@id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
           "subcomponents": [
             {
               "@id": "pkg:deb/debian/zlib1g"

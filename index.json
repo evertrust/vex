@@ -1,8 +1,8 @@
 {
-  "updated_at": "2025-06-24T16:41:14.190623+02:00",
+  "updated_at": "2026-10-16T15:03:43Z",
   "packages": [
     {
-      "id": "pkg:oci/rpm-repo-builder?repository_url=quay.io%2Fevertrust%2Frpm-repo-builder",
+      "id": "pkg:oci/rpm-repo-builder?repository_url=harbor.infra.evertrust.io%2Fplatform%2Frpm-repo-builder",
       "location": "pkg/oci/rpm-repo-builder/openvex.json"
     },
     {
@@ -10,11 +10,11 @@
       "location": "pkg/golang/toolbox/openvex.json"
     },
     {
-      "id": "pkg:oci/horizon?repository_url=quay.io%2Fevertrust%2Fhorizon",
+      "id": "pkg:oci/horizon?repository_url=harbor.infra.evertrust.io%2Flibrary%2Fhorizon",
       "location": "pkg/oci/horizon/openvex.json"
     },
     {
-      "id": "pkg:oci/stream?repository_url=quay.io%2Fevertrust%2Fstream",
+      "id": "pkg:oci/stream?repository_url=harbor.infra.evertrust.io%2Flibrary%2Fstream",
       "location": "pkg/oci/stream/openvex.json"
     }
   ]
