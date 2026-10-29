@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://openvex.dev/docs/public/vex-3118abc9fe88db5cb7310f2717f6758922395512deb69daba7cf9ec610459db0",
   "author": "Evertrust Security Team",
-  "version": 11,
+  "version": 12,
   "statements": [
     {
       "vulnerability": {
@@ -846,8 +846,46 @@
       "justification": "vulnerable_code_cannot_be_controlled_by_adversary",
       "impact_statement": "This jackson-core version is shaded into the parquet-jackson dependency, used only to write Parquet archives. Horizon never reads Parquet files, so no attacker-controlled JSON is parsed",
       "timestamp": "2026-10-02T14:36:00.799808Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-102554"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.google.guava/guava@33.4.8-jre"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Guava 33.4.8 is shaded in org.apache.hadoop.thirdparty:hadoop-shaded-guava:1.5.0, pulled by hadoop-common for parquet-avro. Horizon uses it only to write Parquet archives from internal data and never reads Parquet or performs Java deserialization, so the vulnerable deserialization path is unreachable.",
+      "timestamp": "2026-10-29T13:27:40.652668Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-102554"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/registry.evertrust.io/horizon",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.google.guava/guava@33.4.8-jre"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Guava 33.4.8 is shaded in org.apache.hadoop.thirdparty:hadoop-shaded-guava:1.5.0, pulled by hadoop-common for parquet-avro. Horizon uses it only to write Parquet archives from internal data and never reads Parquet or performs Java deserialization, so the vulnerable deserialization path is unreachable.",
+      "timestamp": "2026-10-29T13:27:40.711206Z"
     }
   ],
   "timestamp": "2025-07-25T10:30:09Z",
-  "last_updated": "2026-10-02T14:36:00Z"
+  "last_updated": "2026-10-29T13:27:40Z"
 }
